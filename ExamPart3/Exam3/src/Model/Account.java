@@ -22,14 +22,14 @@ public class Account implements Comparator<Account>, Serializable {
     }
 
     public Account(String fullName, int accountNumber, double amount) {
-        id = ++count;
+        id = count++;
         this.fullName = fullName;
         this.accountNumber = accountNumber;
         this.amount = amount;
     }
 
     public Account(String fullName, int accountNumber, double amount, AccountHistory accountHistories) {
-        id = ++count;
+        id = count++;
         this.fullName = fullName;
         this.accountNumber = accountNumber;
         this.amount = amount;
