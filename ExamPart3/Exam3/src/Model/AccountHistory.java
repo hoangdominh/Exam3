@@ -3,7 +3,7 @@ package Model;
 public class AccountHistory {
     private int id;
     private int accountId;
-    private String type;
+    private Boolean type;
     private double amount;
     private String description;
 
@@ -13,7 +13,7 @@ public class AccountHistory {
     public AccountHistory() {
     }
 
-    public AccountHistory(int id, int accountId, String type, int amount, String description) {
+    public AccountHistory(int id, int accountId, Boolean type, double amount, String description) {
         this.id = id;
         this.accountId = accountId;
         this.type = type;
@@ -29,7 +29,7 @@ public class AccountHistory {
         return accountId;
     }
 
-    public String getType() {
+    public Boolean getType() {
         return type;
     }
 
@@ -49,7 +49,7 @@ public class AccountHistory {
         this.accountId = accountId;
     }
 
-    public void setType(String type) {
+    public void setType(Boolean type) {
         this.type = type;
     }
 
@@ -84,7 +84,8 @@ public class AccountHistory {
     }
 
 
-    
+
+
 
     @Override
     public String toString() {

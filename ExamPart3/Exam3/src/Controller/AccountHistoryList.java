@@ -10,5 +10,4 @@ public class AccountHistoryList {
 
     public ArrayList<AccountHistory> accountHistoryList;
     Scanner scanner = new Scanner(System.in);
-
 }

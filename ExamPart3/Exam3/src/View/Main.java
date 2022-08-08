@@ -4,19 +4,14 @@ import Controller.AccountList;
 import Model.Account;
 import Model.AccountHistory;
 
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        AccountList accountList = new AccountList();
         AccountHistory accountHistory = new AccountHistory();
+        AccountList accountList = new AccountList();
         int luaChon =0;
         do {
             System.out.println("----------------Menu------------");
@@ -28,7 +23,9 @@ public class Main {
             System.out.println("6. In ra danh sách Account sắp xếp theo tên.");
             System.out.println("7. Lưu File");
             System.out.println("8. Đọc File");
-            System.out.println("9. Chức năng trừ tiền, cộng tiền (xử lý synchronized): ");
+            System.out.println("9. Chức năng trừ tiền (xử lý synchronized): ");
+            System.out.println("10. Chức năng cộng tiền (xử lý synchronized): ");
+
             System.out.println("Chọn: ");
             luaChon = scanner.nextInt();
             scanner.nextLine();
@@ -63,25 +60,9 @@ public class Main {
                     System.out.println(account);
                 }
             } else if(luaChon==9){
-                Thread t1 = new Thread() {
-                    public void run() {
-                        accountHistory.withDraw(2000);
-                    }
-                };
-                t1.start();
-
-                Thread t2 = new Thread() {
-                    public void run() {
-                        accountHistory.dePosit(500);
-                        try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        accountHistory.dePosit(3000);
-                    }
-                };
-                t2.start();
+                accountList.withDraw();
+            } else if (luaChon==10){
+                accountList.withDraw2();
             }
         } while (luaChon != 0) ;
     }

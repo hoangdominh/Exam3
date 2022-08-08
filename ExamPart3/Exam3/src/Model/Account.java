@@ -86,6 +86,8 @@ public class Account implements Comparator<Account>, Serializable {
         amount = Integer.parseInt(scanner.nextLine());
     }
 
+
+
     @Override
     public String toString() {
         return "Account{" +
