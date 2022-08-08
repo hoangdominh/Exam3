@@ -61,8 +61,14 @@ public class Main {
                 }
             } else if(luaChon==9){
                 accountList.withDraw();
+                accountList.writeToFile("C:\\Users\\hoangdm13\\IdeaProjects\\ExamPart3\\Exam3\\src\\AccountHistory");
+
             } else if (luaChon==10){
                 accountList.withDraw2();
+                List<Account> accountDataFromFile = accountList.readDataFromFile("C:\\Users\\hoangdm13\\IdeaProjects\\ExamPart3\\Exam3\\src\\AccountHistory");
+                for (Account account : accountDataFromFile){
+                    System.out.println(account);
+                }
             }
         } while (luaChon != 0) ;
     }
